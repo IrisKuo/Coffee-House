@@ -7,15 +7,16 @@ import Rails from "@rails/ujs"
 // import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "bootstrap";
 
-import jQuery from "./jquery-3.6.0.min"
-window.$ = window.jQuery = jQuery
 
-import Proper from "./bootstrap5/popper.min"
-import Bootstrap from "./bootstrap5/bootstrap.min"
+// window.$ = window.jQuery = require("jQuery")
 
+// window.Bootstrap = require("bootstrap")
 
 
 Rails.start()
 // Turbolinks.start()
 ActiveStorage.start()
+require("jquery")
+require("style")
