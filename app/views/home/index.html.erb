@@ -31,9 +31,9 @@
         <div class="col-sm-12">
           <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">大型廣告</h1>
-              <p class="col-md-8 fs-4">這是廣告</p>
-              <button class="btn btn-primary btn-lg" type="button">Example button</button>
+              <h1 class="display-5 fw-bold"><%= @ad[:title] %></h1>
+              <p class="col-md-8 fs-4"><%= @ad[:des] %></p>
+              <button class="btn btn-primary btn-lg" type="button"><%= @ad[:action_title] %></button>
             </div>
           </div>
         </div>
@@ -41,11 +41,11 @@
       </div>
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100">  
             <img src="/images/Americano.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Americano</h5>
-              <p class="card-text">...</p>
+              <h5 class="card-title"><%= @products[:name] %></h5>
+              <p class="card-text"><%= @products[:description] %></p>
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
@@ -55,8 +55,8 @@
           <div class="card h-100">
             <img src="/images/latte.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Latte</h5>
-              <p class="card-text">...</p>
+              <h5 class="card-title">拿鐵</h5>
+              <p class="card-text">拉丁美洲咖啡豆"</p>
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
@@ -66,8 +66,8 @@
           <div class="card h-100">
             <img src="/images/cappuccino.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Cappuccino</h5>
-              <p class="card-text">...</p>
+              <h5 class="card-title">卡布奇諾</h5>
+              <p class="card-text">瓜地馬拉咖啡豆</p>
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
@@ -77,8 +77,8 @@
           <div class="card h-100">
             <img src="/images/Macchiato.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Macchiato</h5>
-              <p class="card-text">...</p>
+              <h5 class="card-title">焦糖瑪奇朵</h5>
+              <p class="card-text">耶加雪菲咖啡豆</p>
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
