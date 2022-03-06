@@ -45,9 +45,9 @@
         <div class="col">
           <div class="card h-100">
             <%= image_tag product[:image_url] %>
-            <!-- <img src="/images/Americano.jpeg" class="card-img-top" alt="..."> -->
+            <%# <img src="/images/Americano.jpeg" class="card-img-top" alt="..."> %>
             <div class="card-body">
-              <h5 class="card-title"><%= product[:name] %></h5>
+              <h5 class="card-title"><%= "#{product[:id]}. #{product[:name]}" %></h5>
               <p class="card-text"><%= product[:description] %></p>
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
@@ -55,10 +55,36 @@
           </div>
         </div>
         <% end %>
-
-
       
       </div>
+      <div class="row pt-5">
+        <div class="col-xs-12">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <% if @page > @first_page %>
+              <li class="page-item">
+                <%= link_to root_path(page: (@page - 1)), class: 'page-link' do%>
+                <!-- <a class="page-link" href="#" aria-label="Previous"> -->
+                  <span aria-hidden="true">&laquo;</span>
+                <!-- </a> -->
+                <% end %>
+              </li>
+              <% end %>
+              <% (@first_page..@last_page).each do |page_number|%>
+                <li class="page-item"><%= link_to page_number, root_path(page: page_number), class: 'page-link'%></li>
+              <% end %>
+              <% if @page < @last_page %>
+              <li class="page-item">
+                <%= link_to root_path(page: (@page + 1)), class: 'page-link' do%>
+                  <span aria-hidden="true">&raquo;</span>
+                <% end %>
+              </li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    
     </div>
   </div>
 </div>
