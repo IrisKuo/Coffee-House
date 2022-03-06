@@ -37,53 +37,27 @@
             </div>
           </div>
         </div>
-       
       </div>
+
       <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card h-100">  
-            <img src="/images/Americano.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><%= @products[:name] %></h5>
-              <p class="card-text"><%= @products[:description] %></p>
-              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-            </div>
-          </div>
-        </div>
+
+        <% @products.each do |product| %>
         <div class="col">
           <div class="card h-100">
-            <img src="/images/latte.jpeg" class="card-img-top" alt="...">
+            <%= image_tag product[:image_url] %>
+            <!-- <img src="/images/Americano.jpeg" class="card-img-top" alt="..."> -->
             <div class="card-body">
-              <h5 class="card-title">拿鐵</h5>
-              <p class="card-text">拉丁美洲咖啡豆"</p>
+              <h5 class="card-title"><%= product[:name] %></h5>
+              <p class="card-text"><%= product[:description] %></p>
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/images/cappuccino.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">卡布奇諾</h5>
-              <p class="card-text">瓜地馬拉咖啡豆</p>
-              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/images/Macchiato.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">焦糖瑪奇朵</h5>
-              <p class="card-text">耶加雪菲咖啡豆</p>
-              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-            </div>
-          </div>
-        </div>
+        <% end %>
+
+
+      
       </div>
     </div>
   </div>
