@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  PRODUCTS_COUNT = 100
+
   LIMITED_PRODUCTS_NUMBER = 20
 
   def index  
@@ -15,21 +15,14 @@ class HomeController < ApplicationController
       @page = 1
     end
 
+    @products = Product.all
+
     @first_page = 1
-    @last_page = ( PRODUCTS_COUNT /  LIMITED_PRODUCTS_NUMBER )
+    @last_page = ( @products.count /  LIMITED_PRODUCTS_NUMBER )
 
-    @products = []
-    (1..PRODUCTS_COUNT).each do |index|
-      product =  {
-        id: index,
-        name: "美式咖啡#{index}",
-        description: "阿拉比卡咖啡豆",
-        image_url: "/images/Americano.jpeg"
-      }
-      @products << product
-    end
+    @products = @products.offset((@page -1) * LIMITED_PRODUCTS_NUMBER).limit(LIMITED_PRODUCTS_NUMBER)
 
-    @products = @products[(@page - 1) * LIMITED_PRODUCTS_NUMBER, LIMITED_PRODUCTS_NUMBER]
+
 
 
     # @products = [
